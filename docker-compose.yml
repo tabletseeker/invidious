@@ -8,6 +8,7 @@ version: "3"
 services:
 
   invidious:
+    image: quay.io/invidious/invidious:latest
     build:
       context: .
       dockerfile: docker/Dockerfile
@@ -26,11 +27,11 @@ services:
           host: invidious-db
           port: 5432
         check_tables: true
-        # external_port:
+        # external_port: 443
         # domain:
-        # https_only: false
+        # https_only: true
         # statistics_enabled: false
-        hmac_key: "CHANGE_ME!!"
+        hmac_key: ahx8ye9ochae9ahLeeRa
     healthcheck:
       test: wget -nv --tries=1 --spider http://127.0.0.1:3000/api/v1/trending || exit 1
       interval: 30s
