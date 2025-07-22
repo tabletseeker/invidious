@@ -95,6 +95,23 @@
 
 ## Quick start
 
+### Docker
+* Clone Repository
+  ```
+   git clone --branch master --depth=1 https://github.com/tabletseeker/invidious
+  ```
+* Enter Directory
+  ```
+   cd invidious
+  ```
+* Build Docker Images
+   ```
+   docker compose up -d --no-deps --build
+   ```
+* Run Invidious Containers
+  ```
+  docker compose up -d
+  ```
 **Using Invidious:**
 
 - [Select a public instance from the list](https://instances.invidious.io) and start watching videos right now!
