@@ -94,8 +94,6 @@
 
 
 ## Quick start
-
-### Docker
 * Clone Repository
   ```
    git clone --branch master --depth=1 https://github.com/tabletseeker/invidious
@@ -104,6 +102,7 @@
   ```
    cd invidious
   ```
+### Docker
 * Build Docker Images
    ```
    docker compose up -d --no-deps --build
@@ -111,6 +110,27 @@
 * Run Invidious Containers
   ```
   docker compose up -d
+  ```
+### Podman
+* Install Dependencies (Debian)
+  ```
+  sudo apt-get install --no-install-recommends  aardvark-dns passt podman podman-compose
+  ```
+* Modify Podman Registry
+  ```
+  nano /etc/containers/registries.conf
+  ```
+* Uncomment the following and add your preferred source
+  ```
+  unqualified-search-registries = ["docker.io","quay.io"]
+  ```
+* Build Podman Images
+   ```
+   podman-compose up -d --no-deps --build
+   ```
+* Run Invidious Containers
+  ```
+  podman compose up -d
   ```
 **Using Invidious:**
 
